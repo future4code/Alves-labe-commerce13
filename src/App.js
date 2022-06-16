@@ -6,6 +6,8 @@ import { Carrinho } from './componentes/Carrinho-component';
 import { HomeComp } from './componentes/Home-component';
 import { FooterComp } from './componentes/Footer-component';
 import { HeaderComp } from './componentes/Header-component';
+import { NavComp } from './componentes/nav';
+
 
 
 const PaginaTotal = styled.div`
