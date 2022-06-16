@@ -5,6 +5,7 @@ const Headerstyle = styled.header`
   width: 100%;
   height: 20vh;
   background-color: #2a2ca5;
+  font-family:'Kdam Thmor Pro', sans-serif;
 
 `
 export function HeaderComp() {
