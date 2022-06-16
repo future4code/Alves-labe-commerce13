@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import { FiltroComp } from './componentes/Filtro-component';
+// import { FooterComp } from './componentes/Footer-component';
+import { Carrinho } from './componentes/Carrinho-component';
+import { HomeComp } from './componentes/Home-component';
+import { FooterComp } from './componentes/Footer-component';
+import { HeaderComp } from './componentes/Header-component';
+
+
+const PaginaTotal = styled.div`
+  width: 100vw;
+  max-width: 100vw;
+  height: auto;
+  background-color: brown;
+  `
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PaginaTotal>
+      <HeaderComp />
+      <HomeComp />
+      <FooterComp />
+    </PaginaTotal>
   );
 }
 
