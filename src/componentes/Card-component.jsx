@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Component } from 'react'
 
 const Card = styled.div`
   display: grid;
@@ -70,24 +71,23 @@ const ButtonStyled = styled.button`
   
 `
 
+export class CardComponent extends Component {
+  render() {
 
-
-
-export default function CardComponent(props) {
-  return (
-    <Card>
+    return (
+      <Card>
       <DivImg>
         <ImgStyled
-          src={props.imagem}
+          src={'a'}
           alt='Imagem do produto'
         />
       </DivImg>
       <DivDescricao>
-        <TitleStyled>{props.nome}</TitleStyled>
-        <PStyled><i>{props.descricao}</i></PStyled>
-        <PStyled><b>R$ {props.valor}</b></PStyled>
+        <TitleStyled>{'b'}</TitleStyled>
+        <PStyled><b>R$ {'c'}</b></PStyled>
         <ButtonStyled> Adicione ao carrinho</ButtonStyled>
       </DivDescricao>
     </Card>
-  )
+    )
+  }
 }
