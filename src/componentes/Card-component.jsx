@@ -74,8 +74,13 @@ const ButtonStyled = styled.button`
 export class CardComponent extends Component {
   render() {
 
-    return (
-      <Card>
+
+
+
+export  function CardComponent(props) {
+  return (
+    <Card>
+
       <DivImg>
         <ImgStyled
           src={'a'}

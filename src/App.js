@@ -1,13 +1,14 @@
 import React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';
-import { FiltroComp } from './componentes/Filtro-component';
-import { Carrinho } from './componentes/Carrinho-component';
-import { HomeComp } from './componentes/Home-component';
-import { FooterComp } from './componentes/Footer-component';
-import { HeaderComp } from './componentes/Header-component';
-import { NavComp } from './componentes/nav';
-import { CardComponent } from './componentes/Card-component';
+
+
+import  FiltroComp  from './componentes/Filtro-component';
+import  Carrinho  from './componentes/Carrinho-component';
+import  HomeComp  from './componentes/Home-component';
+import  FooterComp  from './componentes/Footer-component';
+import  HeaderComp  from './componentes/Header-component';
+import  NavComp  from './componentes/nav';
 
 
 
