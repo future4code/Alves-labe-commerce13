@@ -73,7 +73,7 @@ const ButtonStyled = styled.button`
 
 
 
-export default function CardComponent(props) {
+export  function CardComponent(props) {
   return (
     <Card>
       <DivImg>
