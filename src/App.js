@@ -1,5 +1,8 @@
 import React from 'react';
+import { Component } from 'react';
 import styled from 'styled-components';
+
+
 import  FiltroComp  from './componentes/Filtro-component';
 import  Carrinho  from './componentes/Carrinho-component';
 import  HomeComp  from './componentes/Home-component';
@@ -16,14 +19,24 @@ const PaginaTotal = styled.div`
   background-color: brown;
   `
 
-function App() {
-  return (
-    <PaginaTotal>
-      <HeaderComp />
-      <HomeComp />
-      <FooterComp />
-    </PaginaTotal>
-  );
+export default class App extends Component {
+ 
+
+
+  render() {
+    
+
+    return (
+      <PaginaTotal>
+        <HeaderComp />
+        <HomeComp />
+        <CardComponent/>
+        <FooterComp />
+      </PaginaTotal>
+    );
+  }
 }
 
-export default App;
+
+
+

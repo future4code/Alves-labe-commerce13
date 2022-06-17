@@ -1,4 +1,5 @@
 import React from "react";
+
 import { CardComponent } from "./Card-component";
 import styled from "styled-components";
 import produto1 from "./imagens/produto1.jpg"
@@ -16,7 +17,7 @@ import produto4 from "./imagens/produto4.jpg"
 
 
 
-const Homerstyled=styled.main`
+const Homerstyled = styled.main`
   width: 100%;
 height: 100vh;
 background-color: #7f2a99;
@@ -28,6 +29,7 @@ const DivPricipal = styled.div`
   display: grid;
   grid-template-columns: 20% 20% 20% 20%;
   `
+
 
 export  class HomeComp extends React.Component {
 state=
@@ -65,6 +67,7 @@ render(){
       descricao='Isso nem é uma pedra espacial -.-'
       valor='65,55'
       />
+
     </DivPricipal>
 
   );
