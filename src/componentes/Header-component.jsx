@@ -6,6 +6,7 @@ import logoheader from "./imagens/logoheader.png"
 
 const Headerstyle = styled.header`
   width: 100%;
+  display:grid;
   height: 20vh;
   background-color: #6163c4;
   font-size: small;

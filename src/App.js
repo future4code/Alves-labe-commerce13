@@ -16,7 +16,7 @@ const PaginaTotal = styled.div`
   width: 100vw;
   max-width: 100vw;
   height: auto;
-  background-image:ceu ;
+  background-image:ceu;
 `
 
 
@@ -30,9 +30,9 @@ export default class App extends Component {
     return (
       <PaginaTotal>
         {/* <HeaderComp /> */}
-        {/* <FiltroComp/> */}
+        {<FiltroComp/>}
         <CardComponent/>
-        {/* <FooterComp /> */}
+         <FooterComp /> 
       </PaginaTotal>
     );
   }

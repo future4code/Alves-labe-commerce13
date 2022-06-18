@@ -18,14 +18,13 @@ import whatsapp from "./imagens/whatsapp.png"
 
 const FooterStyled = styled.footer`
 height: 10vw;
-display: flex;
+display:grid;
     position:fixed;
     bottom: 0;
     width: 100%;
-    justify-content:space-around;
-    align-items:flex-end;
+    grid-template-rows: 1pt 1pt 1pt;
     border: 1px solid black;
-    color: rgb(255, 195, 85) ;
+    color: rgb(85, 161, 255) ;
     background-color: rgb(11, 5, 122);
     padding-left: 30px;
     padding-top: 5px;
@@ -35,12 +34,30 @@ height: 2rem;
 
 `
 
+const DivCartoes = styled.div`
+  display:flex;
+  justify-content:space-around;
 
+`
+
+const DivRedes = styled.div`
+  display:grid;
+grid-template-columns:500px 1pt 1pt 1pt;
+
+`
+const DivCopiryt = styled.div`
+  display:block;
+text-align:center;
+font-size:small;
+color:blueviolet;
+bottom:0;
+`    
 
 
 export function FooterComp() {
   return (
     <FooterStyled>
+      <DivCartoes>
       <Img src={amex2x} alt="cartão de banco" />
       <Img src={aura2x} alt="cartão de banco" />
       <Img src={diners2x} alt="cartão de banco" />
@@ -51,6 +68,8 @@ export function FooterComp() {
       <Img src={correios2x} alt="correios" />
       <Img src={pix} alt="pix" />
       <Img src={hoje2x} alt="boleto bancário" />
+      </DivCartoes>
+      <DivRedes>
       <h2>Siga-nos nas redes sociais:</h2>
       <div class="redes">
         <a target="_blank" href="https://www.facebook.com/"><Img src={facebook2} alt="" /></a>
@@ -61,9 +80,13 @@ export function FooterComp() {
       <div class="redes">
         <a target="_blank" href="https://web.whatsapp.com/"><Img src={whatsapp} alt="" /></a>
       </div>
-
-      <p>Copyright Loja Galeria do Meteorito - 2022. Todos os direitos reservados.</p>
+</DivRedes>
+<DivCopiryt>
+      <p>© Copyright Aerolito Store - 2022. Todos os direitos reservados.</p>
+      </DivCopiryt>
     </FooterStyled>
+    
   );
 }
 
+return FooterComp()
