@@ -38,10 +38,11 @@ const DivDescricao = styled.div`
   padding-bottom: 10px;
   position : static;
 
+
 `
 
 const ImgStyled = styled.img`
-  max-width: 100px;
+  max-width: 100%;
 `
 
 const PStyled = styled.p`
@@ -52,8 +53,10 @@ const PStyled = styled.p`
 const TitleStyled = styled.h4`
   padding-left: 20px;
   padding-right: 20px;
-  font-family: Verdana, Tahoma, sans-serif;
+  font-family: 'Kdam Thmor Pro', sans-serif;
+
   font-weight: bold;
+  text-align: center
 
 `
 const ButtonStyled = styled.button`
@@ -168,7 +171,7 @@ export  function CardComponent() {
   
     {
       "id": 11,
-      "name": "Raro natural  meteorito chinês de ferro magnético de alta frequência aerolite",
+      "name": "Meteorito chinês de ferro magnético de alta frequência aerolite",
       "value": 1200.0,
       "imageUrl": produto11
     },
