@@ -3,12 +3,12 @@ import { Component } from 'react';
 import styled from 'styled-components';
 
 
-import  FiltroComp  from './componentes/Filtro-component';
-import  Carrinho  from './componentes/Carrinho-component';
-import  HomeComp  from './componentes/Home-component';
-import  FooterComp  from './componentes/Footer-component';
-import  HeaderComp  from './componentes/Header-component';
-import  NavComp  from './componentes/nav';
+// import  {FiltroComp}  from './componentes/Filtro-component';
+// import  Carrinho  from './componentes/Carrinho-component';
+// import  {FooterComp}  from './componentes/Footer-component';
+// import  {HeaderComp}  from './componentes/Header-component';
+import { CardComponent } from './componentes/Card-component';
+// import  NavComp  from './componentes/nav';
 
 
 
@@ -28,10 +28,10 @@ export default class App extends Component {
 
     return (
       <PaginaTotal>
-        <HeaderComp />
-        <HomeComp />
+        {/* <HeaderComp /> */}
+        {/* <FiltroComp/> */}
         <CardComponent/>
-        <FooterComp />
+        {/* <FooterComp /> */}
       </PaginaTotal>
     );
   }
