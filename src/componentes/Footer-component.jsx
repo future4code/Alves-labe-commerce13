@@ -18,19 +18,19 @@ import whatsapp from "./imagens/whatsapp.png"
 
 const FooterStyled = styled.footer`
 height: 10vw;
-display: grid;
+display: flex;
     position:fixed;
     bottom: 0;
     width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr 1fr;
+    justify-content:space-around;
+    align-items:flex-end;
     border: 1px solid black;
     color: rgb(255, 195, 85) ;
     background-color: rgb(11, 5, 122);
     padding-left: 30px;
     padding-top: 5px;
 `
-const Img =styled.img`
+const Img = styled.img`
 height: 2rem;
 
 `
