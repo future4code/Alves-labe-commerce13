@@ -6,18 +6,22 @@ import ceu from "./imagens/ceu.jpg";
 // import  {FiltroComp}  from './componentes/Filtro-component';
 // import  Carrinho  from './componentes/Carrinho-component';
 import  {FooterComp}  from './componentes/Footer-component';
-// import  {HeaderComp}  from './componentes/Header-component';
+
+import  {HeaderComp}  from './componentes/Header-component';
+
 import { CardComponent } from './componentes/Card-component';
-// import  NavComp  from './componentes/nav';
+import  {NavComp}  from './componentes/nav';
 
 
 
 const PaginaTotal = styled.div`
-  width: 100vw;
-  max-width: 100vw;
+  width: 96.15vw;
+  max-width: 100%;
   height: auto;
+
   background-image:ceu;
 `
+
 
 
 export default class App extends Component {
@@ -29,10 +33,12 @@ export default class App extends Component {
 
     return (
       <PaginaTotal>
+
         {/* <HeaderComp /> */}
         {<FiltroComp/>}
         <CardComponent/>
          <FooterComp /> 
+
       </PaginaTotal>
     );
   }

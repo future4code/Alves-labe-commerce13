@@ -17,9 +17,11 @@ import whatsapp from "./imagens/whatsapp.png"
 
 
 const FooterStyled = styled.footer`
+
 height: 10vw;
 display:grid;
     position:fixed;
+
     bottom: 0;
     width: 100%;
     grid-template-rows: 1pt 1pt 1pt;
