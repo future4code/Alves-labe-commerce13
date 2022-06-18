@@ -17,9 +17,8 @@ import whatsapp from "./imagens/whatsapp.png"
 
 
 const FooterStyled = styled.footer`
-height: 10vw;
+height: 200px;
 display: grid;
-    position:fixed;
     bottom: 0;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -30,7 +29,7 @@ display: grid;
     padding-left: 30px;
     padding-top: 5px;
 `
-const Img =styled.img`
+const Img = styled.img`
 height: 2rem;
 
 `
