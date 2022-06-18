@@ -17,9 +17,8 @@ import whatsapp from "./imagens/whatsapp.png"
 
 
 const FooterStyled = styled.footer`
-height: 10vw;
-display: flex;
-    position:fixed;
+height: 200px;
+display: grid;
     bottom: 0;
     width: 100%;
     justify-content:space-around;

@@ -35,7 +35,9 @@ const DivImg = styled.div`
 
 const DivDescricao = styled.div`
   background-color: whitesmoke;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
+  position : static;
+
 
 `
 
@@ -48,9 +50,11 @@ const PStyled = styled.p`
   padding-right: 20px;
 `
 
-const TitleStyled = styled.h3`
+const TitleStyled = styled.h4`
   padding-left: 20px;
+  padding-right: 20px;
   font-family: 'Kdam Thmor Pro', sans-serif;
+
   font-weight: bold;
   text-align: center
 
@@ -83,6 +87,7 @@ const ButtonStyled = styled.button`
 `
 
 const DivPricipal = styled.div`
+  max-width:90vw;
   display: grid;
   grid-template-columns: 20% 20% 20% 20%;
   `

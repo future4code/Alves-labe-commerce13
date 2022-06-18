@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 
 const Navstyle = styled.nav`
-  width: 100%;
+  width: 90vw;
   height: 20vh;
   background-color:#72739a;
   position:fixed;
