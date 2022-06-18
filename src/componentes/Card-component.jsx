@@ -37,11 +37,13 @@ const DivImg = styled.div`
 const DivDescricao = styled.div`
   background-color: whitesmoke;
   padding-bottom: 10px;
+  position : static;
+
 
 `
 
 const ImgStyled = styled.img`
-  max-width: 100px;
+  max-width: 100%;
 `
 
 const PStyled = styled.p`
@@ -49,10 +51,14 @@ const PStyled = styled.p`
   padding-right: 20px;
 `
 
+
 const TitleStyled = styled.h3`
-  padding-left: 20px;
-  font-family: Verdana, Tahoma, sans-serif;
+  padding-left: 10px;
+
+  font-family: 'Kdam Thmor Pro', sans-serif;
+
   font-weight: bold;
+  text-align: center;
 
 `
 const ButtonStyled = styled.button`
@@ -66,6 +72,8 @@ const ButtonStyled = styled.button`
   background-color: #575bd850;
   transition: 0.7s;
   color: black;
+  display:flex;
+  
   
   &:hover {
     background-color: #6367d5;
@@ -83,6 +91,7 @@ const ButtonStyled = styled.button`
 `
 
 const DivPricipal = styled.div`
+  max-width:90vw;
   display: grid;
   grid-template-columns: 20% 20% 20% 20%;
   `

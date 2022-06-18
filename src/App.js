@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';
-
+import ceu from "./imagens/ceu.jpg";
 
 
 import  {FiltroComp}  from './componentes/Filtro-component';
@@ -13,12 +13,18 @@ import  {HeaderComp}  from './componentes/Header-component';
 
 
 
+
+
+
 const PaginaTotal = styled.div`
-  width: 100vw;
-  max-width: 100vw;
+  width: 96.15vw;
+  max-width: 100%;
   height: auto;
-  background-color: brown;
-  `
+
+  background-image:ceu;
+`
+
+
 
 export default class App extends Component {
  
@@ -30,9 +36,11 @@ export default class App extends Component {
    
     return (
       <PaginaTotal>
+
         <HeaderComp />
         <FiltroComp/>
         <FooterComp />
+
       </PaginaTotal>
     );
   }
