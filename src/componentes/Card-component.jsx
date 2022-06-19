@@ -22,6 +22,7 @@ const Card = styled.div`
   border: solid blue 1px;
   margin: 15px;
   padding-bottom: 1.5px;
+  background-color: whitesmoke;
   &:hover {
     border: solid blue 3px;
     transition: 0.7s;
@@ -31,13 +32,15 @@ const Card = styled.div`
 `
 const DivImg = styled.div`
   justify-self: center;
+  background-color: whitesmoke;
+
 `
 
 const DivDescricao = styled.div`
   background-color: whitesmoke;
   padding-bottom: 10px;
   position : static;
-
+  align-self: flex-end;
 
 `
 
@@ -56,7 +59,7 @@ const TitleStyled = styled.h4`
   font-family: 'Kdam Thmor Pro', sans-serif;
 
   font-weight: bold;
-  text-align: center
+  text-align: center;
 
 `
 const ButtonStyled = styled.button`
@@ -89,14 +92,10 @@ const ButtonStyled = styled.button`
 const DivPricipal = styled.div`
   max-width:90vw;
   display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-columns: 25% 25% 25% 25%;
+
   `
-
-
-
-
-
-
+  
 export  function CardComponent() {
   const arraydeprodutos=[
     {

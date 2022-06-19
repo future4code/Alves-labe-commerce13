@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';
-import ceu from "./imagens/ceu.jpg";
+import Ceu from "./componentes/imagens/Ceu.jpg";
 
 // import  {FiltroComp}  from './componentes/Filtro-component';
 // import  Carrinho  from './componentes/Carrinho-component';
@@ -18,7 +18,7 @@ const PaginaTotal = styled.div`
   width: 96.15vw;
   max-width: 100%;
   height: auto;
-
+  
   /* background-color: brown; */
   `
 
