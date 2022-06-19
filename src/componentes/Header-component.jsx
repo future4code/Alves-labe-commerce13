@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import pessoapc from "./imagens/pessoapc.png"
 import glass from "./imagens/glass.png"
-import logo from "./imagens/logo.png"
+import logoheader from "./imagens/logo.png"
 
 const Headerstyle = styled.header`
    width: 100%;
@@ -19,7 +19,7 @@ const Headerstyle = styled.header`
 
 
 `
-const logo = styled.img`
+const logoheaderStyled = styled.img`
 width: 20rem;
 
 `
@@ -53,7 +53,7 @@ export function HeaderComp() {
 
        
       </Headerstyle>
-        <img src={logoheader} alt="logo" />
+        <logoheaderStyled src={logoheader} alt="logo" />
         <a href="./index.html">Início |</a>
           <a href="./Produtos.html">Produtos |</a>
           <a href="./contato.html"> Contato|</a>
