@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';
-import Ceu from "./componentes/imagens/ceu.png";
+import Ceu from "./componentes/imagens/ceu.jpg";
 
 
 import  {FiltroComp}  from './componentes/Filtro-component';
