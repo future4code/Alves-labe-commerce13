@@ -28,7 +28,6 @@ const Card = styled.div`
 `
 const DivImg = styled.div`
   justify-self: center;
-
 `
 
 const DivDescricao = styled.div`

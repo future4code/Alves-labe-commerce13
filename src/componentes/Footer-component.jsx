@@ -88,6 +88,7 @@ export function FooterComp() {
       <DivCopi>
         <p>©Copyright Loja Aerolito Store - 2022. Todos os direitos reservados.</p></DivCopi>
     </FooterStyled>
+    
   );
 }
 
