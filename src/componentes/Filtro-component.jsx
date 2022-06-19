@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { CardComponent } from "./Card-component";
 import { arraydeprodutos } from "./Card-component";
 
 
@@ -74,15 +73,7 @@ const ButtonStyled = styled.button`
   } 
 `
 
-const DivPricipal = styled.div`
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
-  `
 
-
-const ListaContainer=styled.div`
-  
-`
 
 
 

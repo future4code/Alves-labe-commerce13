@@ -91,4 +91,3 @@ export function FooterComp() {
   );
 }
 
-return FooterComp()
