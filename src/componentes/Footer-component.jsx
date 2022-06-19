@@ -11,57 +11,82 @@ import correios2x from "./imagens/correios2x.png"
 import pix from "./imagens/pix.png"
 import hoje2x from "./imagens/hoje2x.png"
 import facebook2 from "./imagens/facebook2.png"
-import instagram from "./imagens/instagram.png"
+import instagram from "./imagens/Instagram2.png"
 import whatsapp from "./imagens/whatsapp.png"
 
 
 
 const FooterStyled = styled.footer`
-height: 200px;
+height: 120px;
 display: grid;
-    bottom: 0;
-    width: 100%;
-    justify-content:space-around;
-    align-items:flex-end;
-    border: 1px solid black;
-    color: rgb(255, 195, 85) ;
-    background-color: rgb(11, 5, 122);
-    padding-left: 30px;
-    padding-top: 5px;
+margin-bottom: 0;
+width: 100%;
+grid-template-rows: 1pt 1pt 0.3pt;
+border: 1px solid black;
+color: rgb(85, 122, 255) ;
+background-color: rgb(11, 5, 122);
+padding-left: 20px;
+padding-top: 50px;
+padding-bottom:5px;
+
 `
 const Img = styled.img`
 height: 2rem;
 
 `
+const DivCards = styled.div`
+display:flex;
+justify-content:space-around;
+align-items:flex-end;
 
-
-
+`
+const DivRedes = styled.div`
+display:grid;
+grid-template-columns: 300px 50px 50px 50px;
+grid-template-rows:1pt 1pt;
+padding-bottom:20px;
+padding-top:8px;
+font-family:'Kdam Thmor Pro', sans-serif;
+`
+const DivCopi = styled.div`
+display:inline;
+justify-content:space-around;
+padding-bottom:5px;
+padding-top:60px;
+font-family:'Kdam Thmor Pro', sans-serif;
+font-size:small;
+margin-left:800px;
+`
 
 export function FooterComp() {
   return (
     <FooterStyled>
-      <Img src={amex2x} alt="cartão de banco" />
-      <Img src={aura2x} alt="cartão de banco" />
-      <Img src={diners2x} alt="cartão de banco" />
-      <Img src={elo2x} alt="cartão de banco" />
-      <Img src={mastercard2x} alt="cartão de banco" />
-      <Img src={pagseguro2x} alt="cartão de banco" />
-      <Img src={visa2x} alt="cartão de banco" />
-      <Img src={correios2x} alt="correios" />
-      <Img src={pix} alt="pix" />
-      <Img src={hoje2x} alt="boleto bancário" />
+      <DivCards>
+        <Img src={amex2x} alt="cartão de banco" />
+        <Img src={aura2x} alt="cartão de banco" />
+        <Img src={diners2x} alt="cartão de banco" />
+        <Img src={elo2x} alt="cartão de banco" />
+        <Img src={mastercard2x} alt="cartão de banco" />
+        <Img src={pagseguro2x} alt="cartão de banco" />
+        <Img src={visa2x} alt="cartão de banco" />
+        <Img src={correios2x} alt="correios" />
+        <Img src={pix} alt="pix" />
+        <Img src={hoje2x} alt="boleto bancário" />
+      </DivCards>
+       <DivRedes>
       <h2>Siga-nos nas redes sociais:</h2>
-      <div class="redes">
-        <a target="_blank" href="https://www.facebook.com/"><Img src={facebook2} alt="" /></a>
-      </div>
-      <div class="redes">
-        <a target="_blank" href="https://www.instagram.com/"><Img src={instagram} alt="" /></a>
-      </div>
-      <div class="redes">
-        <a target="_blank" href="https://web.whatsapp.com/"><Img src={whatsapp} alt="" /></a>
-      </div>
 
-      <p>Copyright Loja Galeria do Meteorito - 2022. Todos os direitos reservados.</p>
+     
+        <a href="https://www.facebook.com/"><Img src={facebook2} alt="" /></a>
+
+
+        <a href="https://www.instagram.com/"><Img src={instagram} alt="" /></a>
+
+
+        <a href="https://web.whatsapp.com/"><Img src={whatsapp} alt="" /></a>
+      </DivRedes>
+      <DivCopi>
+        <p>©Copyright Loja Aerolito Store - 2022. Todos os direitos reservados.</p></DivCopi>
     </FooterStyled>
   );
 }
