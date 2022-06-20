@@ -3,7 +3,11 @@ import styled from "styled-components";
 import { arraydeprodutos } from "./Card-component";
 
 
+const DivPrincipal = styled.div`
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
 
+`
 
 
 const Card = styled.div`
@@ -21,11 +25,10 @@ const Card = styled.div`
     border: solid blue 3px;
     transition: 0.7s;
     margin: 12px;
-    
-  
-
   }
 `
+
+
 const DivImg = styled.div`
   justify-self: center;
 `
@@ -78,140 +81,172 @@ const ButtonStyled = styled.button`
   } 
 `
 
-
-
-
-
-
-
-
 export class FiltroComp extends Component {
 
   state = {
-    produtosArray:arraydeprodutos,
-    buscaValor:"",
+    produtosArray: arraydeprodutos,
+    buscaValor: "",
     minValor: "",
-    maxValor:"",
-    ordemProdutos:"nome",
-    ordenacao:1
+    maxValor: "",
+    ordemProdutos: "nome",
+    ordenacao: 1,
+    produtoCarrinho: []
   }
 
-updateQuery=(event)=>{
-  this.setState({
-    buscaValor: event.target.value
-  })
-}
+  updateQuery = (event) => {
+    this.setState({
+      buscaValor: event.target.value
+    })
+  }
 
-updateMinPrice=(event)=>{
-  this.setState({
-    minValor: event.target.value
-  })
-}
+  updateMinPrice = (event) => {
+    this.setState({
+      minValor: event.target.value
+    })
+  }
 
-updateMaxPrice=(event)=>{
-  this.setState({
-    maxValor: event.target.value
-  })
-}
+  updateMaxPrice = (event) => {
+    this.setState({
+      maxValor: event.target.value
+    })
+  }
 
-updateSortingParameter=(event)=>{
-  this.setState({
-    ordemProdutos: event.target.value
-  })
-}
+  updateSortingParameter = (event) => {
+    this.setState({
+      ordemProdutos: event.target.value
+    })
+  }
 
-updateOrdem=(event)=>{
-this.setState({
-ordenacao:event.target.value
-})
-
-
-}
-
-render() {
-  return <div>
-    <header/>
-    <div>
-      <input 
-      placeholder="Pesquisa"
-      value={this.state.buscaValor}
-      onChange={this.updateQuery}/>
-
-<input 
-type="number"
-      placeholder="Preço Mínimo"
-      value={this.state.minValor}
-      onChange={this.updateMinPrice}/>
-
-<input 
-type="number"
-      placeholder="Preço Máximo"
-      value={this.state.maxValor}
-      onChange={this.updateMaxPrice}/>
-</div>
-<div>
-
-<label For="sort">Ordem:</label>
-<select
- name="sort"
- value={this.state.ordemProdutos}
- onChange={this.updateSortingParameter}
- >
-  
-  <option value="nome">Produto:</option>
-  <option value="valor">Preço:</option>
-</select>
-
-<select
- name="Ordenacao"
- value={this.state.ordenacao}
- onChange={this.updateOrdem}
- >
-  
-  <option value={1}>Crescente:</option>
-  <option value={-1}>Decrescente:</option>
-</select>
-
-    </div>
-
-
-    {this.state.produtosArray.filter(produto =>{
-      return produto.name.toLowerCase().includes(this.state.buscaValor.toLowerCase())||
-      produto.descricao.toLowerCase().includes(this.state.buscaValor.toLowerCase())
+  updateOrdem = (event) => {
+    this.setState({
+      ordenacao: event.target.value
     })
 
-    .filter(produto=>{
-        return this.state.minValor === "" || produto.value >= this.state.minValor
-      })
-      .filter(produto=>{
-        return this.state.maxValor === "" || produto.value <= this.state.maxValor
-      })
-      .sort((valor1,valor2)=>{
-        switch (this.state.ordemProdutos) {
-          case "nome":
-            return this.state.ordenacao*( valor1.name.localeCompare(valor2.name))
-            default:
-              return this.state.ordenacao* (valor1.value-valor2.value)
-      }})
-    .map((item)=>{
-    return (
-    
-<Card key={item.id}>
-  <DivImg>
-    <ImgStyled
-      src={item.imageUrl}
-      alt='Imagem do produto'
-      />
-  </DivImg>
-  <DivDescricao>
-    <TitleStyled>{item.name}</TitleStyled>
-    <TitleStyled>{item.descricao}</TitleStyled>
-    <PStyled><b>R$ {item.value}</b></PStyled>
-    <ButtonStyled> Adicione ao carrinho</ButtonStyled>
-  </DivDescricao>
-</Card>
-    )})
   }
-    </div>
-}
+
+  adicionaProduto = (produtoId) => {
+    const novoProduto = this.state.produtoCarrinho.find((produto => produtoId == produto.id))
+      if (novoProduto) {
+        const novoProdutoCarrinho = this.state.produtoCarrinho.map(produto => {
+          if (produtoId == produto.id) {
+            return{
+              ...produto,
+              quantidade: produto.quantidade + 1 
+            }
+           
+          }
+          return produto
+        })
+        this.setState({produtoCarrinho: novoProdutoCarrinho})
+      }else{
+        const produtoCarrinho = this.state.produtosArray.find(produto => produtoId == produto.id)
+        const novosProdutos = [...this.state.produtoCarrinho, {...produtoCarrinho, quantidade: 1}]
+        this.setState({produtoCarrinho: novosProdutos})
+      }
+  }
+
+ 
+
+  render() {
+    const ListaCarrinho = this.state.produtoCarrinho
+
+
+    return <DivPrincipal>
+      <header />
+      <div>
+        <input
+          placeholder="Pesquisa"
+          value={this.state.buscaValor}
+          onChange={this.updateQuery} />
+
+        <input
+          type="number"
+          placeholder="Preço Mínimo"
+          value={this.state.minValor}
+          onChange={this.updateMinPrice} />
+
+        <input
+          type="number"
+          placeholder="Preço Máximo"
+          value={this.state.maxValor}
+          onChange={this.updateMaxPrice} />
+      </div>
+      <div>
+
+        <label For="sort">Ordem:</label>
+        <select
+          name="sort"
+          value={this.state.ordemProdutos}
+          onChange={this.updateSortingParameter}
+        >
+
+          <option value="nome">Produto:</option>
+          <option value="valor">Preço:</option>
+        </select>
+
+        <select
+          name="Ordenacao"
+          value={this.state.ordenacao}
+          onChange={this.updateOrdem}
+        >
+
+          <option value={1}>Crescente:</option>
+          <option value={-1}>Decrescente:</option>
+        </select>
+
+      </div>
+
+
+      {this.state.produtosArray.filter(produto => {
+        return produto.name.toLowerCase().includes(this.state.buscaValor.toLowerCase()) ||
+          produto.descricao.toLowerCase().includes(this.state.buscaValor.toLowerCase())
+      })
+
+        .filter(produto => {
+          return this.state.minValor === "" || produto.value >= this.state.minValor
+        })
+        .filter(produto => {
+          return this.state.maxValor === "" || produto.value <= this.state.maxValor
+        })
+        .sort((valor1, valor2) => {
+          switch (this.state.ordemProdutos) {
+            case "nome":
+              return this.state.ordenacao * (valor1.name.localeCompare(valor2.name))
+            default:
+              return this.state.ordenacao * (valor1.value - valor2.value)
+          }
+        })
+        .map((item) => {
+          return (
+            <Card key={item.id}>
+              <DivImg>
+                <ImgStyled
+                  src={item.imageUrl}
+                  alt='Imagem do produto'
+                />
+              </DivImg>
+              <DivDescricao>
+                <TitleStyled>{item.name}</TitleStyled>
+                <TitleStyled>{item.descricao}</TitleStyled>
+                <PStyled><b>R$ {item.value}</b></PStyled>
+                <ButtonStyled
+                  onClick={()=> this.adicionaProduto(item.id)}
+                >
+                  Adicione ao carrinho
+                </ButtonStyled>
+              </DivDescricao>
+            </Card>
+          )
+        })
+      }
+      <div>
+        {this.state.produtoCarrinho.map((produto) => {
+          return <Card
+          item={produto}
+          />
+        })}
+
+      </div>
+    </DivPrincipal>
+  }
 }

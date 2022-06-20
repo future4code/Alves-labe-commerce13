@@ -20,7 +20,7 @@ const FooterStyled = styled.footer`
 height: 120px;
 display: grid;
 margin-bottom: 0;
-width: 100%;
+width: 98.4%;
 grid-template-rows: 1pt 1pt 0.3pt;
 border: 1px solid black;
 color: rgb(85, 122, 255) ;
