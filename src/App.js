@@ -16,7 +16,7 @@ import  {HeaderComp}  from './componentes/Header-component';
 
 
 const PaginaTotal = styled.div`
-  width: 96.15vw;
+  width: 100%;
   max-width: 100%;
   height: auto;
 background-image:url(${Ceu});
