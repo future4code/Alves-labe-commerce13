@@ -90,7 +90,8 @@ export class FiltroComp extends Component {
     maxValor: "",
     ordemProdutos: "nome",
     ordenacao: 1,
-    produtoCarrinho: []
+    produtoCarrinho: [],
+    valorCarrinho: 0
   }
 
   updateQuery = (event) => {
@@ -124,6 +125,7 @@ export class FiltroComp extends Component {
 
   }
 
+
   adicionaProduto = (produtoId) => {
     const novoProduto = this.state.produtoCarrinho.find((produto => produtoId == produto.id))
       if (novoProduto) {
@@ -131,7 +133,7 @@ export class FiltroComp extends Component {
           if (produtoId == produto.id) {
             return{
               ...produto,
-              quantidade: produto.quantidade + 1 
+              quantidade: produto.quantidade + 1
             }
            
           }
@@ -144,11 +146,22 @@ export class FiltroComp extends Component {
         this.setState({produtoCarrinho: novosProdutos})
       }
   }
+  removeProduto = (produtoId) => {
+    const novosProdutos = this.state.produtoCarrinho.map((produto) => {
+      if (produto.id === produtoId) {
+        return {
+          ...produto,
+          quantidade: produto.quantidade - 1
+        }
+      }
+      return produto
+    }).filter((produto) => produto.quantidade > 0)
+    this.setState({ produtoCarrinho: novosProdutos })
+  }
 
  
 
   render() {
-    const ListaCarrinho = this.state.produtoCarrinho
 
 
     return <DivPrincipal>
@@ -230,7 +243,7 @@ export class FiltroComp extends Component {
                 <TitleStyled>{item.descricao}</TitleStyled>
                 <PStyled><b>R$ {item.value}</b></PStyled>
                 <ButtonStyled
-                  onClick={()=> this.adicionaProduto(item.id)}
+                  onClick={()=> this.adicionaProduto(item.id) }
                 >
                   Adicione ao carrinho
                 </ButtonStyled>
@@ -241,12 +254,29 @@ export class FiltroComp extends Component {
       }
       <div>
         {this.state.produtoCarrinho.map((produto) => {
-          return <Card
-          item={produto}
-          />
+          return  <Card key={produto.id}>
+          <DivImg>
+            <ImgStyled
+              src={produto.imageUrl}
+              alt='Imagem do produto'
+            />
+          </DivImg>
+          <DivDescricao>
+            <TitleStyled>{produto.name}</TitleStyled>
+            <TitleStyled>{produto.descricao}</TitleStyled>
+            <PStyled><b>R$ {produto.value}</b></PStyled>
+            <ButtonStyled
+              onClick={()=> this.removeProduto(produto.id)}
+            >
+              Remover do carrinho
+            </ButtonStyled>
+          </DivDescricao>
+        </Card>
         })}
-
+        <h4>Quantidade: {this.state.produtoCarrinho.length}</h4>
+        <h3>Valor Total: {this.state.valorCarrinho}</h3>
       </div>
     </DivPrincipal>
   }
 }
+
