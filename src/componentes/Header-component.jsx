@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import pessoapc from "./imagens/pessoapc.png"
 import glass from "./imagens/glass.png"
-import logoheader from "./imagens/logoheader.png"
+import logoheader from "./imagens/logo.png"
 
 const Headerstyle = styled.header`
    width: 100%;
     height: 23vh;
-    background-color: #6163c4;
+    background-image: url(${logoheader});
+    background-repeat: no-repeat; 
+    background-size:100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -15,13 +17,16 @@ const Headerstyle = styled.header`
     align-items: center;
     color: aliceblue;
     font-size: medium;
+    text-align: center;
+
+
 
 `
-const LogoheaderStyled = styled.img`
+const logoheaderStyled = styled.img`
 width: 20rem;
 
 `
-
+  
 
 
 const Atendimento = styled.a`
@@ -40,24 +45,10 @@ export function HeaderComp() {
   return (
     <div>
       <Headerstyle>
-
-        <section>
-          <Atendimento href="https://www.gmail.com/"><img src={pessoapc} alt="atendimento"></img> </Atendimento>
-        </section>
-        <section>
-          {/* <a href="./">Login |</a> */}
-          {/* <a href="./">Cadastre-se</a> */}
-        </section>
-
-
+        <h1>LabMeteoro</h1>
       </Headerstyle>
-      <LogoheaderStyled src={logoheader} alt="logo" />
-      <a href="./index.html">Início |</a>
-      <a href="./Produtos.html">Produtos |</a>
-      <a href="./contato.html"> Contato|</a>
-      <a href="./perguntas-frequentes.html"> Perguntas Frequentes|</a>
-      {/* <a href="">Quem Somos</a> */}
-
+     <p></p>
+       
     </div>
 
   );

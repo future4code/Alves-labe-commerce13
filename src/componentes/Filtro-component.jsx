@@ -5,8 +5,29 @@ import { arraydeprodutos } from "./Card-component";
 
 const DivPrincipal = styled.div`
   display: grid;
-  grid-template-columns:1fr 1fr 1fr;
+  grid-template-columns:150px 1fr 150px;
 
+
+`
+const Filtros=styled.nav`
+  width: 100%;
+  height: 100%;
+
+
+`
+const Cardsarea=styled.section`
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ; 
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
+    justify-content: center;
+    justify-items: center;
+`
+const Carrinhodecompras=styled.div`
+  width: 100%;
+  height: 100%;
+ background-color: white;
 `
 
 
@@ -17,9 +38,7 @@ const Card = styled.div`
   border: solid blue 1px;
   margin: 15px;
   padding-bottom: 1.5px;
-  width: 300px;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
- /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+  width: 220px;
     font-size: medium;
   &:hover {
     border: solid blue 3px;
@@ -27,15 +46,22 @@ const Card = styled.div`
     margin: 12px;
   }
 `
+const Cardcarrinho=styled.div`
+  width: 100%;
 
+`
 
 const DivImg = styled.div`
   justify-self: center;
+  
+  
 `
 
 const DivDescricao = styled.div`
   background-color: whitesmoke;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  font-size: 10px;
+  text-align: center;
 
 `
 
@@ -79,6 +105,10 @@ const ButtonStyled = styled.button`
     border-left: 1px;
     color: black;
   } 
+`
+
+const Inputs=styled.input`
+width:100%
 `
 
 export class FiltroComp extends Component {
@@ -165,7 +195,7 @@ export class FiltroComp extends Component {
 
 
     return <DivPrincipal>
-      <header />
+    <Filtros>
       <div>
         <input
           placeholder="Pesquisa"
@@ -186,7 +216,7 @@ export class FiltroComp extends Component {
       </div>
       <div>
 
-        <label For="sort">Ordem:</label>
+        <label For="sort"></label>
         <select
           name="sort"
           value={this.state.ordemProdutos}
@@ -208,8 +238,8 @@ export class FiltroComp extends Component {
         </select>
 
       </div>
-
-
+      </Filtros>
+      <Cardsarea>
       {this.state.produtosArray.filter(produto => {
         return produto.name.toLowerCase().includes(this.state.buscaValor.toLowerCase()) ||
           produto.descricao.toLowerCase().includes(this.state.buscaValor.toLowerCase())
@@ -252,7 +282,8 @@ export class FiltroComp extends Component {
           )
         })
       }
-      <div>
+      </Cardsarea>
+      <Carrinhodecompras>
         {this.state.produtoCarrinho.map((produto) => {
           return  <Card key={produto.id}>
           <DivImg>
@@ -274,8 +305,7 @@ export class FiltroComp extends Component {
         </Card>
         })}
         <h4>Quantidade: {this.state.produtoCarrinho.length}</h4>
-        <h3>Valor Total: {this.state.valorCarrinho}</h3>
-      </div>
+      </Carrinhodecompras>
     </DivPrincipal>
   }
 }
